@@ -1,0 +1,84 @@
+<p></p>
+<div class="col-md-8 mx-auto">
+  <div class="card"> 
+    <div class="card-body">
+      <div class="card-header text-center">
+        <h1 class="text-center">Registrar Producto</h1>
+      </div>
+      <p></p>
+      <form (ngSubmit)="agregar()">
+        <div class="form-row form-group">
+          <div class="col-sm-6 mb-3">    
+            <label><b>Nombre: </b></label>
+              <input type="text" name="name" class="form-control" 
+              placeholder="Ingrese Nombre" required
+              [(ngModel)]="item.name"
+              >
+          </div> 
+        
+          <div class="col-sm-6 mb-3">
+            <label><b>Categoria: </b></label>
+              <input type="text" name="category" class="form-control" 
+              placeholder="Categoria" required
+              [(ngModel)]="item.category"
+              >
+          </div> 
+
+          <div class="col-sm-6 mb-3">
+            <label><b>Precio: </b></label>
+              <input type="text" name="price" class="form-control" 
+              placeholder="Precio" required
+              [(ngModel)]="item.price"
+              >
+          </div> 
+          <div class="col-sm-6 mb-3">
+            <label><b>Descripción: </b></label>
+              <input type="text" name="description" class="form-control" 
+              placeholder="Descripción" required
+              [(ngModel)]="item.description"
+              >
+          </div> 
+          <div class="col-sm-6 mb-3">
+            <label><b>Imagen: </b></label>
+              <input type="text" name="image" class="form-control" 
+              placeholder="Imagen" required
+              [(ngModel)]="item.image"
+              >
+          </div> 
+          <div class="col-sm-6 mb-3">
+            <label><b>Imagen 1: </b></label>
+              <input type="text" name="image" class="form-control" 
+                placeholder="Imagen" required
+                [(ngModel)]="item.image1"
+              >
+          </div>
+          <div class="col-sm-6 mb-3">
+            <label><b>Imagen 2: </b></label>
+              <input type="text" name="image" class="form-control" 
+                placeholder="Imagen" required
+                [(ngModel)]="item.image2"
+              >
+          </div>
+          <div class="col-sm-6 mb-3">
+            <label><b>Imagen 3: </b></label>
+              <input type="text" name="image" class="form-control" 
+                placeholder="Imagen" required
+                [(ngModel)]="item.image3"
+              >
+          </div>
+          <div class="col-sm-6 mb-3">
+            <label><b>Estado: </b></label>
+              <input type="text" name="quantity" class="form-control" 
+              placeholder="Cantidad" required
+              [(ngModel)]="item.quantity"
+              >
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<p></p>

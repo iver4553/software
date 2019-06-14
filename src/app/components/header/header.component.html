@@ -1,0 +1,26 @@
+  <nav class="navbar navbar-dark bg-primary">
+    <a href="/"> <div routerLinkActive="router-link-active"  style="color:#ffff; font-family:Georgia, 'Times New Roman', Times, serif; font-size:35px;">INTERACSIS</div> </a>
+    <!--<a class="navbar-brand" [routerLink]="['/store']">Home</a>-->
+    <!--<a class="navbar-brand">Categoria</a>-->
+    <div class="btn-group" role="group" style="color:#ffff; font-family:Georgia, 'Times New Roman', Times, serif;">
+        <a id="btnGroupDrop1" class="navbar-brand dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categoria
+        </a>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" [routerLink]="['/laptops']">Laptops</a>
+          <a class="dropdown-item" [routerLink]="['/pc']">PCs</a>
+          <a class="dropdown-item" [routerLink]="['/accesorios']">Accessories</a>
+          <a class="dropdown-item" [routerLink]="['/perifericos']">Peripherals</a>
+          <a class="dropdown-item" [routerLink]="['/gamer']">Gamers Accessories</a> 
+        </div>
+      </div>
+    <a class="navbar-brand"[routerLink]="['/lista']" style="color:#ffff; font-family:Georgia, 'Times New Roman', Times, serif;">Carrito</a>
+    <a class="role_admin navbar-brand"[routerLink]="['/login3']" style="color:#ffff; font-family:Georgia, 'Times New Roman', Times, serif;">Editar/Eliminar</a>
+    <a class="role_admin navbar-brand" [routerLink]="['/login']" style="color:#ffff; font-family:Georgia, 'Times New Roman', Times, serif;">Agregar Producto</a>
+    <a *ngIf="!user" class="navbar-brand" [routerLink]="['/login2']" style="color: #ffff; font-family: Georgia, 'Times New Roman', Times, serif">Acceder</a>
+    <a *ngIf="user" class="navbar-brand" [routerLink]="['/']" (click)="logout()" style="color: #ffff; font-family: Georgia, 'Times New Roman', Times, serif">Salir</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" name="filterPost" [(ngModel)]="filterPost">
+      <button class="btn btn-success my-2 my-sm-0" type="submit" style="color:#ffff; font-family:Georgia, 'Times New Roman', Times, serif;">Buscar</button>
+    </form>
+  </nav>

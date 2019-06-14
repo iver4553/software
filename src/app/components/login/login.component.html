@@ -1,0 +1,17 @@
+<p></p>
+<div class="col-md-6 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="text-center">Administrador</h1>
+      <p>Introdusca contraseña para entrar a la ventana de registro...</p>
+
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <div class="form-group col-sm-8">
+          <label><b>Contraseña</b></label>
+          <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control" ngModel>
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </form>
+    </div>
+  </div>
+</div>

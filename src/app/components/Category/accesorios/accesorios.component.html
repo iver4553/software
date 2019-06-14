@@ -1,0 +1,64 @@
+<font size=6 color="black"><p>ACCESSORIES</p></font>
+<div class="row">
+  <div *ngFor = "let item of accesorios$ | async" class="col s12 m4">
+    <div class="card" style="width: 18rem;">
+      <img [src]="item.image" class="card-img-top" alt="..." style="max-width: 100%; width: auto; height: auto;">
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}} </h5>
+        <p><b>Precio: </b>$us {{item.price}} </p>
+        <div class="dropdown-divider"></div>
+        <p class="card-text">Para saber mas sobre este producto presione el botón ver detalles</p>
+
+        <a class="btn btn-outline-primary" data-toggle="modal" 
+        data-target="#exampleModalScrollable" (click)="detalles(item)">
+          Ver Detalles
+        </a>
+        <p></p>
+        <a href="#" class="btn btn-outline-success">Comprar</a>
+        <p></p>
+        <a (click)="carrito(item)" class="btn btn-outline-primary">Añadir a Carrito</a>
+      </div>
+    </div>
+</div>
+  </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalScrollableTitle"><p>Nombre: {{mostrarItem.name}} </p></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <!--<div class="card col-sm-4" style="width: 18rem;">
+                <img [src]="mostrarItem.image" class="card-img-top" alt="...">
+            </div>-->
+            <div class="row">
+              <div class="card col-sm-4" style="width: 18rem;">
+                <img [src]="mostrarItem.image1" class="card-img-top" alt="...">
+              </div>
+              <div class="card col-sm-4" style="width: 18rem;">
+                <img [src]="mostrarItem.image2" class="card-img-top" alt="...">
+              </div>
+              <div class="card col-sm-4" style="width: 18rem;">
+                <img [src]="mostrarItem.image3" class="card-img-top" alt="...">
+              </div>
+            </div>
+            <p></p>
+            <p><b>Nombre:</b> {{mostrarItem.name}} </p>
+            <p><b>Precio:</b> $us {{mostrarItem.price}} </p>
+            <!--<p><b>Características:</b> {{mostrarItem.caracteristicas}} </p>-->
+            <p><b>Descripción:</b> {{mostrarItem.description}} </p>
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+        </div>
+      </div>
+    </div>
+  </div>

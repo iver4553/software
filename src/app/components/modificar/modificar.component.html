@@ -1,0 +1,73 @@
+<p></p>
+<div class="container">
+  <div class="card">
+    <div class="card-header text-center">
+      <h4>Listado de Productos</h4>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr class="text-center">
+            <th>Nombre</th>  
+            <th>Precio</th>
+            <th>Categoria</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center" *ngFor="let item of items | async">
+            <td> {{item.name}} </td>
+            <td> {{item.price}} </td>
+            <td> {{item.category}} </td>
+            <td>
+              <button class="btn btn-outline-success" data-toggle="modal" 
+              data-target="#exampleModalScrollable" (click)="editar(item)">Editar</button>
+              <button class="btn btn-outline-danger" (click)="eliminar(item)" style="margin-left: 10px">ELiminar</button>
+              <!--<div class="float-right" (click)="eliminar(item)">
+                  <i class="far fa-trash-alt"></i>
+              </div>-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+
+<!--Modal-->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalScrollableTitle"><p>Nombre: {{editarItem.name}} </p></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="agregarItemEditado()">
+            <div class="col-sm-6 mb-3">    
+              <label><b>Nombre: </b></label>
+                <input type="text" name="name" class="form-control" 
+                  placeholder="Modifique el Nombre" required
+                  [(ngModel)]="editarItem.name"
+                >
+            </div>
+            <div class="col-sm-6 mb-3">
+              <label><b>Precio: </b></label>
+                <input type="text" name="price" class="form-control" 
+                  placeholder="Modifique el Precio" required
+                  [(ngModel)]="editarItem.price"
+                >
+            </div>
+            <button type="submit" class="btn btn-primary">Editar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
